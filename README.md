@@ -19,8 +19,10 @@ By preprocessing the data, we create a high-quality foundation for building robu
               Feature Selection
 
 Dimensionality Reduction with PCA:
+
 Reducing the number of features (columns) while maintaining the highest possible level of information is known as dimensionality reduction. It is a technique for displaying a given dataset with fewer features—that
 is, dimensions—while retaining the significant characteristics of the original data. A variety of feature selection and data compression techniques used in preprocessing are included in dimensionality reduction.
+
 This is equivalent to eliminating features that are superfluous or redundant, or just noisy data, to build a model with fewer variables.
 
 Principal Component Analysis(PCA) is mainly used for Linear Reduction. The data is linearly mapped to a lower-dimensional space in a way that maximizes the variance of the data in the low-dimensional representation while preserving the maximum amount of
@@ -28,25 +30,31 @@ information.PCA is utilised to alter the preprocessed data. a new class of feat
 122 features in the data are reduced to 20 primary components by our technique.
 
 Data Splitting: 
+
 Splitting the data into training and testing sets is the last step before training the model. Using a random state for reproducibility, the data (features and target variable) is
 split into two different training and testing sets namely for our research purpose. One in an 80/20 split for balance and the other in a 50/50 split for data efficiency evaluation. The model is trained using the training set,
 which enables it to discover patterns and connections in the data. The model’s performance on fresh data and generalizability is next assessed using the unseen testing set.
 
 
 Model Selection and Analysis:
+
 These models are divided into two primary groups: Ensemble learning models and classification models.
 After that, each model is examined and trained to determine which one works best with our particular dataset.
+
 Classification Models:
+
 Classification models attempt to learn a mapping function that assigns a data point to a specific class (normal or attack).
 we explore several traditional classification algorithms:
 Logistic Regression, GaussianNB, LinearSVC, DecisionTreeClassifier, RandomForest Classifier, KNeighborsClassifier and Isolation Forest.
 Ensemble Learning Methods:
+
 Ensemble learning combines predictions from several weaker models typically decision trees, to improve forecasting accuracy and robustness. It uses the collective intelligence of the ensemble to reduce errors or biases that can be present in individual models. Through
 ensemble learning, a single, more powerful predictor is created. Every model gets better overall by learning from the errors of the one before it. 
 we have trained four
 models: XGBoost Classifier, Gradient Boosting Classifier, CatBoost, and Light GBM.
 
-The Champion Model
+The Champion Model:
+
 Finding the balance between accuracy, speed, and memory utilization is crucial when choosing a model for real-time network intrusion detection (NID). Although models with good accuracy, detection speed,
 and low memory consumption, such as GaussianNB, Decision Tree, Logistic Regression, and Linear SVC, may not be able to meet real-time demands because of their overall performance. Similarly, even with its
 advantages, Random Forest might be vulnerable to overfitting, which reduces its usefulness in practical situations. The high detection time and memory utilization of K-Nearest Neighbours (KNN) render it an
