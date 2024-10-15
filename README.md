@@ -1,7 +1,7 @@
-Machine learning has emerged as a promising approach for network intrusion detection (NID) due to its ability to identify complex patterns in network traffic data. In the exploration of machine learning for NID, emphasises the significance of effective algorithms for realtime applications. Despite being a benchmark dataset,
+Machine learning has emerged as a promising approach for network intrusion detection (NID) due to its ability to identify complex patterns in network traffic data. In the exploration of machine learning for NID, emphasises the significance of effective algorithms for realtime applications. Despite being a benchmark dataset,
 the dataset has drawbacks that are recognised  By using data pre-processing techniques, this study improves the quality and dependability of this data for real-time NID evaluation,
 hence addressing these restrictions.we have used preprocessing techniques and trained various ML models in this dataset. Although machine learning performs well at NID, network features must be taken into account.
-In their exploration of deep learning models for NID in 5G networks, highlight the necessity of customised methods for various network scenarios. By concentrating on feature engineering and machine learning models especially suited for real-time NID within telecommunication networks, this study expands on this idea.
+In their exploration of deep learning models for NID in 5G networks, highlight the necessity of customised methods for various network scenarios. By concentrating on feature engineering and machine learning models especially suited for real-time NID within telecommunication networks, this study expands on this idea.
 By forecasting network failures,show how machine learning can be used for network security in 5G in a more comprehensive way than just intrusion detection.
 In order to prevent security breaches and ensure network uptime, this research focuses on real-time detection of anomolies inside network traffic data, which is a complement to their work. we have trained various ML
 models for this dataset,by employing various pre-processing techniques as recognised by and employed  models  for labelled dataset.
@@ -21,7 +21,7 @@ By preprocessing the data, we create a high-quality foundation for building robu
 Dimensionality Reduction with PCA:
 
 Reducing the number of features (columns) while maintaining the highest possible level of information is known as dimensionality reduction. It is a technique for displaying a given dataset with fewer features—that
-is, dimensions—while retaining the significant characteristics of the original data. A variety of feature selection and data compression techniques used in preprocessing are included in dimensionality reduction.
+is, dimensions—while retaining the significant characteristics of the original data. A variety of feature selection and data compression techniques used in preprocessing are included in dimensionality reduction.
 
 This is equivalent to eliminating features that are superfluous or redundant, or just noisy data, to build a model with fewer variables.
 
@@ -51,7 +51,7 @@ Ensemble Learning Methods:
 Ensemble learning combines predictions from several weaker models typically decision trees, to improve forecasting accuracy and robustness. It uses the collective intelligence of the ensemble to reduce errors or biases that can be present in individual models. Through
 ensemble learning, a single, more powerful predictor is created. Every model gets better overall by learning from the errors of the one before it. 
 we have trained four
-models: XGBoost Classifier, Gradient Boosting Classifier, CatBoost, and Light GBM.
+models: XGBoost Classifier, Gradient Boosting Classifier, CatBoost, and Light GBM.
 
 The Champion Model:
 
