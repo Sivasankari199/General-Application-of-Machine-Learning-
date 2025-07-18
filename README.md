@@ -1,66 +1,99 @@
-Machine learning has emerged as a promising approach for network intrusion detection (NID) due to its ability to identify complex patterns in network traffic data. In the exploration of machine learning for NID, emphasises the significance of effective algorithms for realtime applications. Despite being a benchmark dataset,
-the dataset has drawbacks that are recognised  By using data pre-processing techniques, this study improves the quality and dependability of this data for real-time NID evaluation,
-hence addressing these restrictions.we have used preprocessing techniques and trained various ML models in this dataset. Although machine learning performs well at NID, network features must be taken into account.
-In their exploration of deep learning models for NID in 5G networks, highlight the necessity of customised methods for various network scenarios. By concentrating on feature engineering and machine learning models especially suited for real-time NID within telecommunication networks, this study expands on this idea.
-By forecasting network failures,show how machine learning can be used for network security in 5G in a more comprehensive way than just intrusion detection.
-In order to prevent security breaches and ensure network uptime, this research focuses on real-time detection of anomolies inside network traffic data, which is a complement to their work. we have trained various ML
-models for this dataset,by employing various pre-processing techniques as recognised by and employed  models  for labelled dataset.
+# Real-Time Network Intrusion Detection using Machine Learning
 
-Our goal is to use machine learning techniques to develop a reliable and deployable solution that can improve network security and protect vital infrastructure. We aim to develop a
-system that leverages machine learning algorithms to analyze network traffic data identify anomalies indicative of malicious activity and predict it. By comparing each
-model’s performance, we aim to identify the most effective approach for detecting network intrusions while minimizing the false positives and achieving high accuracy. This proactive approach will enable us to mitigate
-threats before they can cause significant damage.
+This project explores the application of machine learning algorithms for real-time **Network Intrusion Detection (NID)** in telecommunication networks. The aim is to mitigate system downtime by recognizing anomalies and attack patterns in network traffic. The work includes preprocessing network traffic data, training multiple models, evaluating their performance, and identifying the most suitable model for deployment.
 
-Data Preprocessing:
-By preprocessing the data, we create a high-quality foundation for building robust NID systems which includes
-              Handling missing values
-              Data Exploration
-              Scaling and Encoding
-              Feature Selection
+## 📌 Table of Contents
 
-Dimensionality Reduction with PCA:
+- [Overview]
+- [Dataset]
+- [Project Structure]
+- [Setup Instructions]
+- [Models Evaluated]
+- [Key Results]
+- [Conclusion]
+- [Future Work]
 
-Reducing the number of features (columns) while maintaining the highest possible level of information is known as dimensionality reduction. It is a technique for displaying a given dataset with fewer features—that
-is, dimensions—while retaining the significant characteristics of the original data. A variety of feature selection and data compression techniques used in preprocessing are included in dimensionality reduction.
+## 🧠 Overview
 
-This is equivalent to eliminating features that are superfluous or redundant, or just noisy data, to build a model with fewer variables.
+The primary objective is to build and evaluate machine learning models for detecting intrusions in real-time network traffic. This is critical for protecting telecommunication infrastructures from outages and service disruptions caused by cyberattacks.
 
-Principal Component Analysis(PCA) is mainly used for Linear Reduction. The data is linearly mapped to a lower-dimensional space in a way that maximizes the variance of the data in the low-dimensional representation while preserving the maximum amount of
-information.PCA is utilised to alter the preprocessed data. a new class of features found by PCA, are responsible for capturing the majority of the variance in the original data. The
-122 features in the data are reduced to 20 primary components by our technique.
+The project:
+- Uses the **KDD Cup 99** dataset
+- Applies preprocessing techniques including feature scaling, encoding, and PCA for dimensionality reduction
+- Compares classification algorithms and ensemble methods
+- Explores trade-offs between **accuracy**, **prediction latency**, and **memory usage**
 
-Data Splitting: 
+## 📁 Dataset
 
-Splitting the data into training and testing sets is the last step before training the model. Using a random state for reproducibility, the data (features and target variable) is
-split into two different training and testing sets namely for our research purpose. One in an 80/20 split for balance and the other in a 50/50 split for data efficiency evaluation. The model is trained using the training set,
-which enables it to discover patterns and connections in the data. The model’s performance on fresh data and generalizability is next assessed using the unseen testing set.
+- **Name:** [KDD Cup 1999 Dataset](http://kdd.ics.uci.edu/databases/kddcup99/kddcup99.html)
+- **Samples:** ~126,000
+- **Features:** 43 original attributes representing traffic patterns
+- **Target:** Binary classification — `normal` vs `attack`
+
+## 🗂 Project Structure
+
+📦 network-intrusion-detection-ml
+├── 📄 README.md 
+├── 📓 intrusion_detection.ipynb <-- Jupyter notebook (1.5MB)
+├── 📁 data/
+│ └── kddcup99.csv <-- Raw dataset (not included)
+├── 📁 models/ 
+├── 📁 results/
+│ └── plots/, metrics/ 
+├── 📄 requirements.txt 
 
 
-Model Selection and Analysis:
 
-These models are divided into two primary groups: Ensemble learning models and classification models.
-After that, each model is examined and trained to determine which one works best with our particular dataset.
+## 🚀 Models Evaluated
 
-Classification Models:
+The following models were trained and benchmarked:
 
-Classification models attempt to learn a mapping function that assigns a data point to a specific class (normal or attack).
-we explore several traditional classification algorithms:
-Logistic Regression, GaussianNB, LinearSVC, DecisionTreeClassifier, RandomForest Classifier, KNeighborsClassifier and Isolation Forest.
-Ensemble Learning Methods:
+### Classification Models
+- Logistic Regression
+- Naive Bayes
+- Linear SVC
+- Decision Tree
+- Random Forest
+- K-Nearest Neighbors
+- Isolation Forest
 
-Ensemble learning combines predictions from several weaker models typically decision trees, to improve forecasting accuracy and robustness. It uses the collective intelligence of the ensemble to reduce errors or biases that can be present in individual models. Through
-ensemble learning, a single, more powerful predictor is created. Every model gets better overall by learning from the errors of the one before it. 
-we have trained four
-models: XGBoost Classifier, Gradient Boosting Classifier, CatBoost, and Light GBM.
+### Ensemble Methods
+- XGBoost
+- Gradient Boosting
+- CatBoost
+- LightGBM
 
-The Champion Model:
+## 📊 Key Results
 
-Finding the balance between accuracy, speed, and memory utilization is crucial when choosing a model for real-time network intrusion detection (NID). Although models with good accuracy, detection speed,
-and low memory consumption, such as GaussianNB, Decision Tree, Logistic Regression, and Linear SVC, may not be able to meet real-time demands because of their overall performance. Similarly, even with its
-advantages, Random Forest might be vulnerable to overfitting, which reduces its usefulness in practical situations. The high detection time and memory utilization of K-Nearest Neighbours (KNN) render it an
-obvious outlier and unsuitable for real-time applications.
-XGBoost and LightGBM are at the forefront of real-time NID. A compelling combination of excellent accuracy, respectable speed, and manageable memoryutilization is provided by XGBoost. Because of its
-adaptability, it can be used in a wide range of real-time traffic load. But LightGBM succeeds in analyzing large amounts of network traffic with good speed and efficiency which is our top priority. Despite having the
-largest memory footprint among the top performers, its remarkable speed and efficiency in processing big datasets make it the best option for real-time intrusion detection. With a potential balance between speed,
-memory consumption, and accuracy, CatBoost exhibits promise. Though each model has advantages and disadvantages, XGBoost and LightGBM stand out as the best options for real-time NID due to their remarkable
-performance and economical usage.
+| Model         | Test Accuracy | Detection Time (s) | Memory Usage (MB) | Remarks                                |
+|---------------|---------------|---------------------|--------------------|-----------------------------------------|
+| LightGBM      | 0.999         | 0.93                | 813.6              | Best model for real-time large-scale data |
+| XGBoost       | 0.999         | 1.2                 | moderate           | Excellent accuracy, good generalization |
+| CatBoost      | 0.998         | 0.004               | low                | Fast and highly accurate                |
+| Naive Bayes   | 0.92          | 0.365               | low                | Fast, effective basic model             |
+| KNN           | 0.99          | 43.5                | 5.94               | High accuracy but too slow              |
+
+📉 **Dimensionality Reduction:** PCA reduced 122 features to 20 components, improving model speed and avoiding overfitting.
+
+⚖️ Evaluation included:
+- F1-score
+- ROC-AUC
+- Precision/Recall
+- Memory and latency benchmarks
+
+## ✅ Conclusion
+
+**LightGBM and XGBoost** emerged as the most suitable models for real-time NID based on their:
+- Exceptional prediction accuracy (≈99.9%)
+- Real-time speed (sub-second latency)
+- Balance between memory usage and generalization
+
+## 🔄 Future Work
+
+To enhance the performance and robustness of intrusion detection:
+- Apply **SMOTE** for handling class imbalance
+- Explore **deep learning models** (CNN, RNN)
+- Test models on **real-time network streams**
+- Increase interpretability via SHAP or LIME
+
+
